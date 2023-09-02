@@ -44,6 +44,7 @@ Use the arrow keys to navigate and enter for OK
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nmtui.png?raw=true)
 
 7b. Select Activate a connection
+
 7c. Navigate to your wifi id, press enter, then type your password, and press enter again
 Your window should look like so:
 
