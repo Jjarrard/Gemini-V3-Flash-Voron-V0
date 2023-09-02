@@ -8,29 +8,34 @@ It's not perfect, but should get you up and printing again.
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/gemini-v3.png?raw=true)
 
-###1. Format SD card (16-32gb) via Disk Management in Windows
+1. Format an SD card (16-32gb) via Disk Management in Windows
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/format-card.png?raw=true)
 
-###2. Get Raspberry Pi image tool https://www.raspberrypi.com/software/
+2. Get Raspberry Pi image tool https://www.raspberrypi.com/software/
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/rpi-imager.png?raw=true)
 
-###3. Get FLYOS image from https://mellow.klipper.cn/#/introduction/downloadimg (Sorry I couldn't upload a 5gb img file to git)
-(version in screenshot works with Gemini V3 board)
-![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/fly-download-area.png?raw=true)
+3. Download and unpack the FLYOS image 7zip from above 'FLY-v3.1_Flygemini_bullseye_0819_5.10.85.img.7z'
+This came from [Mellow](https://mellow.klipper.cn/#/introduction/downloadimg)
 
-###5. Plug in board via the bottom left USB C port, and open Device Manager and expand Ports (COM & LPT), you should see a new COM port appear
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/fly-download-area.png?raw=true)
+>(version in screenshot works with Gemini V3 board)
+
+4. Write this img file to the sd card via the Pi Image Tool, you don't need to add any wifi details etc yet.
+4b. Insert the sd card into the Gemini 
+
+6. Plug board into computer via the bottom left USB C port, and open Device Manager and expand Ports (COM & LPT), you should see a new COM port appear
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/com-port.png?raw=true)
 
-###4. Get PuTTY https://www.putty.org/ and set it up with your COM port like so
+6. Get PuTTY https://www.putty.org/ and set it up with your COM port like so
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/putty-com.png?raw=true)
-Give it a few seconds, You’re in
+> Give it a few seconds, You’re in
 
 
-##Add wifi
+# Add wifi
 
 5.Type nmtui into putty and press enter
 Use the arrow keys to navigate and enter for OK
@@ -72,9 +77,11 @@ Set the options like so
 Press q then y to save and quit
 
 Type make -j4
+
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/make-j4.png?raw=true)
 
 Remove diagonal jumper before the next step
+
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/jumper.png?raw=true)
 
 wget -O gemini-tools_install.sh https://cdn.mellow.klipper.cn/Utils/gemini-tools/gemini-tools_install.sh && sudo bash gemini-tools_install.sh gemini-v3-tools
@@ -89,9 +96,9 @@ Else
 sudo gemini-v3-tools -f ~/klipper/out/klipper.bin
 
 
- sudo gemini-v3-tools -h
- sudo gemini-v3-tools -s
- sudo gemini-v3-tools -r
+ >sudo gemini-v3-tools -h   burn mode
+ >sudo gemini-v3-tools -s   normal mode? (ngl I've forgotten)
+ >sudo gemini-v3-tools -r   reboot
 
 
 ls /dev/serial/by-id/*
