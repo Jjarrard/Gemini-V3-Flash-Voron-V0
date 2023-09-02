@@ -5,28 +5,28 @@ Voron 0.2 Fly Gemini V3 from scratch
 GOAL:
 The goal of this document is to refresh the Gemini V3 in a Voron V0 to ‘as shipped’ standard as per 01/09/23, and to have a version locked document, with no links that may change. 
 
-*GEMINI BOARD IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/gemini-v3.png?raw=true)
 
 1. Format SD card (16-32gb) via Disk Management in Windows
 
-*FORMAT IMAGE*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/format-card.png?raw=true)
 
 2. Get Raspberry Pi image tool https://www.raspberrypi.com/software/
 
-*RASP PI IMAGE TOOL IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/rpi-imager.png?raw=true)
 
 3. Get FLYOS image included in github files, but also available from https://mellow.klipper.cn/#/introduction/downloadimg 
 (Yes this works with Gemini V3 board)
 
-*FLY DOWNLOAD IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/fly-download-area.png?raw=true)
 
 5. Plug in board via the bottom left USB C port, and open Device Manager and expand Ports (COM & LPT), you should see a new COM port appear
 
-*COM PORTS IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/com-port.png?raw=true)
 
 4. Get PuTTY https://www.putty.org/ and set it up with your COM port like so
 
-*PUTTY IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/putty-com.png?raw=true)
 Give it a few seconds, You’re in
 
 
@@ -35,47 +35,47 @@ Add wifi
 5.Type nmtui into putty and press enter
 Use the arrow keys to navigate and enter for OK
 
-*NETWORK TOOL IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nmtui.png?raw=true)
 
 5b. Select Activate a connection
 5c. Navigate to your wifi id, press enter, then type your password, and press enter again
 Your window should look like so:
 
-*WIFI PART IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nmtui-wifi.png?raw=true)
 
 5d. Press esc esc to back out of this menu
 
 5e. Type ip a and press enter
 Look for an ip similar to 192.168.1.85, copy this into your browser and you should see Fluidd
 
-*FLUID IN BROWSER IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/fluidd.png?raw=true)
+Errors shown will be fixed during this document
 
 Ok, let's switch user and connect via wifi. Open a new putty instance, you can close the old window.
 
 6. Input the new details for the board
 
-*PUTTY IP IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/putty-via-ip.png?raw=true)
 
 Once in the console, username ‘fly’ password ‘mellow’
 
-*LOGIN IMAGE*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/login.png?raw=true)
 
 Cd klipper, make clean, make menuconfig 
 
-*KLIPPER CMDS IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/klipper-make-cmds.png?raw=true)
 
 Set the options like so
 
-*FIRMWARE CONFIG IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/mainboard-makemenu.png?raw=true)
 
 Press q then y to save and quit
 
 Type make -j4
-*MAKEJ4 IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/make-j4.png?raw=true)
 
 Remove diagonal jumper before the next step
-
-*DIAG JUMPER IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/jumper.png?raw=true)
 
 wget -O gemini-tools_install.sh https://cdn.mellow.klipper.cn/Utils/gemini-tools/gemini-tools_install.sh && sudo bash gemini-tools_install.sh gemini-v3-tools
 
@@ -101,28 +101,28 @@ Grab the blue text
 /dev/serial/by-id/usb-Klipper_stm32f405xx_56003E001751313333363337-if00
 
 Put it in your printer.cfg
-*PRINTER CFG IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/updt-printconf-w-mcu.png?raw=true)
 
 To fix the below, change the path to the virtual directory in mainsail
 
-*MAINSAIL ERROR IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/mainsail-vst-location-error.png?raw=true)
 
 Cd mainsail-config
 nano mainsail.cfg
 
-*MAINSAIL CMDS IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nano-mainsail.png?raw=true)
 
 Scroll using arrow keys, change virtual sdcard to expected location
 CTRL+X to save, press Y, then enter
 
-*NANO MAINSAIL IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/mainsail-vsd-change.png?raw=true)
 
 
 Do the same with ~/printer-data/mainsail/mainsail.cfg
 
 Do the same with printer.cfg but via fluidd (because easier)
 
-*PRINTER VIRTUAL IMG*
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/vsd-prntcgf.png?raw=true)
 
 
 V0 display
