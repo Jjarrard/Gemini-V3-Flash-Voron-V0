@@ -23,9 +23,10 @@ This came from [Mellow](https://mellow.klipper.cn/#/introduction/downloadimg)
 >(version in screenshot works with Gemini V3 board)
 
 4a. Write this img file to the sd card via the Pi Image Tool, you don't need to add any wifi details etc yet.
+
 4b. Insert the sd card into the Gemini 
 
-6. Plug board into computer via the bottom left USB C port, and open Device Manager and expand Ports (COM & LPT), you should see a new COM port appear
+5. Plug board into computer via the bottom left USB C port, and open Device Manager and expand Ports (COM & LPT), you should see a new COM port appear
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/com-port.png?raw=true)
 
@@ -98,7 +99,7 @@ sudo gemini-v3-tools -f ~/klipper/out/klipper.bin
 10d. Type the following commands
 sudo gemini-v3-tools -h
 
- > this enters burning mode
+> this enters burning mode
 
 sudo gemini-v3-tools -s
 
@@ -117,7 +118,9 @@ ls /dev/serial/by-id/*
 and put it in your printer.cfg
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/updt-printconf-w-mcu.png?raw=true)
 
-To fix the below, change the path to the virtual directory in mainsail
+
+#mainsail fix
+To fix the below, change the path to the virtual directory in mainsail, I did this by navigating to the config locations and editing them using Nano. There are easier ways of doing this, but this is how I did it.
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/mainsail-vst-location-error.png?raw=true)
 
@@ -179,6 +182,7 @@ After completion ls /dev/serial/by-id/* should return a device begining with /de
 Copy this serial port name (/dev/serial/by-id/usb-Klipper_stm32f042x6... )and place it in your [mcu display] section of the display config file.
 
 Your board should now be usable with Klipper. Use the example config file to get started Best option is to copy the config file into the same directory as printer.cfg then add [include V0Display.cfg] to the end of your printer.cfg to include the file.
+
 
 # Camera
 Look in crowsnest logs for something like video0 / video1
