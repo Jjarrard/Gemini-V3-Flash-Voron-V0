@@ -177,3 +177,6 @@ I've uploaded the macros that came on the board I recieved, use the printer cfg 
 UPLOAD PRINTER.CFG
 UPLOAD MACROS
 
+API key location in Fluidd for Cura/Octoprint connection
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/api-key.png?raw=true)
+
