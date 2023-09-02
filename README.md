@@ -38,7 +38,7 @@ This came from [Mellow](https://mellow.klipper.cn/#/introduction/downloadimg)
 
 # Add wifi
 
-7\.Type nmtui into putty and press enter
+7\. Type nmtui into putty and press enter
 Use the arrow keys to navigate and enter for OK
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nmtui.png?raw=true)
