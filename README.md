@@ -158,7 +158,9 @@ Make sure you see an STM32 in DFU mode listed
 
 4\. Run cd ~/klipper from the command line to enter the Klipper directory
 
-5\. Run make menuconfig settings should be:
+5\. Run make menuconfig 
+
+settings should be:
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/Menuconfig_Base_Options.png?raw=true)
 > Pay attention to the PA9/PA10 comm setting, as if you get it wrong it won’t work and show up in blue
@@ -174,7 +176,7 @@ Hit Q to Exit and Save
 7\. Run make flash FLASH_DEVICE=xxxx:yyyy (using xxxx:yyyy from above)
 
 > You may see what appears to be an "error" after flashing your board. (Blue box)
-As long as you see the File downloded successfully text (Green box) you are good to proceed.
+As long as you see the File downloaded successfully text (Green box) you are good to proceed.
 
 > The error (Red box) seems to be caused by the controller immediately running the uploaded code and no longer appearing as a DFU device. This is not an issue, as long as the board reports a Klipper serial name. If you see an issue with space on the chip, it may be that you still have an item ticked on the optional features step.
 
