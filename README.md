@@ -122,7 +122,7 @@ and put it in your printer.cfg
 #mainsail fix
 To fix the below, change the path to the virtual directory in mainsail, I did this by navigating to the config locations and editing them using Nano. There are easier ways of doing this, but this is how I did it.
 
-![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/mainsail-vst-location-error.png?raw=true)
+![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/mainsail-vsd-location-error.png?raw=true)
 
 Cd mainsail-config
 nano mainsail.cfg
