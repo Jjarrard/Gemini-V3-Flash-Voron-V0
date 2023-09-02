@@ -3,7 +3,7 @@
 Voron 0.2 Fly Gemini V3 from scratch
 
 GOAL:
-The goal of this document is to refresh the Gemini V3 in a Voron V0 to ‘as shipped’ standard as per 01/09/23, and to have a version locked document, with no links that may change. 
+The goal of this document is to refresh the Gemini V3 in a Voron V0 to ‘as shipped’ standard as per 01/09/23, with as few external links as possible. 
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/gemini-v3.png?raw=true)
 
@@ -15,9 +15,8 @@ The goal of this document is to refresh the Gemini V3 in a Voron V0 to ‘as shi
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/rpi-imager.png?raw=true)
 
-3. Get FLYOS image included in github files, but also available from https://mellow.klipper.cn/#/introduction/downloadimg 
-(Yes this works with Gemini V3 board)
-
+3. Get FLYOS image from https://mellow.klipper.cn/#/introduction/downloadimg (Sorry I couldn't upload a 5gb img file to git)
+(version in screenshot works with Gemini V3 board)
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/fly-download-area.png?raw=true)
 
 5. Plug in board via the bottom left USB C port, and open Device Manager and expand Ports (COM & LPT), you should see a new COM port appear
