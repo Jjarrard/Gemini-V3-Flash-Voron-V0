@@ -22,9 +22,9 @@ This came from [Mellow](https://mellow.klipper.cn/#/introduction/downloadimg)
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/fly-download-area.png?raw=true)
 >(version in screenshot works with Gemini V3 board)
 
-  4a. Write this img file to the sd card via the Pi Image Tool, you don't need to add any wifi details etc yet.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4a. Write this img file to the sd card via the Pi Image Tool, you don't need to add any wifi details etc yet.
 
-  4b. Insert the sd card into the Gemini 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4b. Insert the sd card into the Gemini 
 
 5. Plug board into computer via the bottom left USB C port, and open Device Manager and expand Ports (COM & LPT), you should see a new COM port appear
 
@@ -43,15 +43,15 @@ Use the arrow keys to navigate and enter for OK
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nmtui.png?raw=true)
 
-  7b. Select Activate a connection
-  7c. Navigate to your wifi id, press enter, then type your password, and press enter again
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7b. Select Activate a connection
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7c. Navigate to your wifi id, press enter, then type your password, and press enter again
 Your window should look like so:
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nmtui-wifi.png?raw=true)
 
-  7d. Press esc esc to back out of this menu
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7d. Press esc esc to back out of this menu
 
-  7e. Type ip a and press enter
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7e. Type ip a and press enter
 Look for an ip similar to 192.168.1.85, copy this into your browser and you should see Fluidd
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/fluidd.png?raw=true)
@@ -67,17 +67,17 @@ Once in the console, username ‘fly’ password ‘mellow’
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/login.png?raw=true)
 
-  9a. Cd klipper, make clean, make menuconfig 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9a. Cd klipper, make clean, make menuconfig 
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/klipper-make-cmds.png?raw=true)
 
-  9b. Set the options like so
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9b. Set the options like so
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/mainboard-makemenu.png?raw=true)
 
 Press q then y to save and quit
 
-  9c. Type make -j4
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9c. Type make -j4
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/make-j4.png?raw=true)
 
@@ -85,18 +85,18 @@ Press q then y to save and quit
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/jumper.png?raw=true)
 
-  10b. Type the following into Putty
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10b. Type the following into Putty
 wget -O gemini-tools_install.sh https://cdn.mellow.klipper.cn/Utils/gemini-tools/gemini-tools_install.sh && sudo bash gemini-tools_install.sh gemini-v3-tools
 
 Type password when required
 
-  10c. If you get hid-flash error type
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10c. If you get hid-flash error type
 cd ~/klipper/lib/hidflash && make
 
 Else type
 sudo gemini-v3-tools -f ~/klipper/out/klipper.bin
 
-  10d. Type the following commands
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10d. Type the following commands
 sudo gemini-v3-tools -h
 
 > this enters burning mode
@@ -111,7 +111,7 @@ sudo gemini-v3-tools -r
 
 ls /dev/serial/by-id/*
 
-  10e. Grab the blue text like below
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10e. Grab the blue text like below
 
 /dev/serial/by-id/usb-Klipper_stm32f405xx........
 
