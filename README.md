@@ -1,35 +1,36 @@
 # Gemini-V3-Flash-Voron-V0
 
-Voron 0.2 Fly Gemini V3 from scratch
+Voron 0.2 Fly Gemini V3 reflash/refresh
 
 GOAL:
 The goal of this document is to refresh the Gemini V3 in a Voron V0 to ‘as shipped’ standard as per 01/09/23, with as few external links as possible. 
+It's not perfect, but should get you up and printing again.
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/gemini-v3.png?raw=true)
 
-1. Format SD card (16-32gb) via Disk Management in Windows
+###1. Format SD card (16-32gb) via Disk Management in Windows
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/format-card.png?raw=true)
 
-2. Get Raspberry Pi image tool https://www.raspberrypi.com/software/
+###2. Get Raspberry Pi image tool https://www.raspberrypi.com/software/
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/rpi-imager.png?raw=true)
 
-3. Get FLYOS image from https://mellow.klipper.cn/#/introduction/downloadimg (Sorry I couldn't upload a 5gb img file to git)
+###3. Get FLYOS image from https://mellow.klipper.cn/#/introduction/downloadimg (Sorry I couldn't upload a 5gb img file to git)
 (version in screenshot works with Gemini V3 board)
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/fly-download-area.png?raw=true)
 
-5. Plug in board via the bottom left USB C port, and open Device Manager and expand Ports (COM & LPT), you should see a new COM port appear
+###5. Plug in board via the bottom left USB C port, and open Device Manager and expand Ports (COM & LPT), you should see a new COM port appear
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/com-port.png?raw=true)
 
-4. Get PuTTY https://www.putty.org/ and set it up with your COM port like so
+###4. Get PuTTY https://www.putty.org/ and set it up with your COM port like so
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/putty-com.png?raw=true)
 Give it a few seconds, You’re in
 
 
-Add wifi
+##Add wifi
 
 5.Type nmtui into putty and press enter
 Use the arrow keys to navigate and enter for OK
