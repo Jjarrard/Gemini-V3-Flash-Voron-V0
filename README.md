@@ -22,9 +22,9 @@ This came from [Mellow](https://mellow.klipper.cn/#/introduction/downloadimg)
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/fly-download-area.png?raw=true)
 >(version in screenshot works with Gemini V3 board)
 
-4a. Write this img file to the sd card via the Pi Image Tool, you don't need to add any wifi details etc yet.
+  4a. Write this img file to the sd card via the Pi Image Tool, you don't need to add any wifi details etc yet.
 
-4b. Insert the sd card into the Gemini 
+  4b. Insert the sd card into the Gemini 
 
 5. Plug board into computer via the bottom left USB C port, and open Device Manager and expand Ports (COM & LPT), you should see a new COM port appear
 
@@ -43,15 +43,15 @@ Use the arrow keys to navigate and enter for OK
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nmtui.png?raw=true)
 
-7b. Select Activate a connection
-7c. Navigate to your wifi id, press enter, then type your password, and press enter again
+  7b. Select Activate a connection
+  7c. Navigate to your wifi id, press enter, then type your password, and press enter again
 Your window should look like so:
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nmtui-wifi.png?raw=true)
 
-7d. Press esc esc to back out of this menu
+  7d. Press esc esc to back out of this menu
 
-7e. Type ip a and press enter
+  7e. Type ip a and press enter
 Look for an ip similar to 192.168.1.85, copy this into your browser and you should see Fluidd
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/fluidd.png?raw=true)
@@ -67,17 +67,17 @@ Once in the console, username ‘fly’ password ‘mellow’
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/login.png?raw=true)
 
-9a. Cd klipper, make clean, make menuconfig 
+  9a. Cd klipper, make clean, make menuconfig 
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/klipper-make-cmds.png?raw=true)
 
-9b. Set the options like so
+  9b. Set the options like so
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/mainboard-makemenu.png?raw=true)
 
 Press q then y to save and quit
 
-9c. Type make -j4
+  9c. Type make -j4
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/make-j4.png?raw=true)
 
@@ -85,18 +85,18 @@ Press q then y to save and quit
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/jumper.png?raw=true)
 
-10b. Type the following into Putty
+  10b. Type the following into Putty
 wget -O gemini-tools_install.sh https://cdn.mellow.klipper.cn/Utils/gemini-tools/gemini-tools_install.sh && sudo bash gemini-tools_install.sh gemini-v3-tools
 
 Type password when required
 
-10c. If you get hid-flash error type
+  10c. If you get hid-flash error type
 cd ~/klipper/lib/hidflash && make
 
 Else type
 sudo gemini-v3-tools -f ~/klipper/out/klipper.bin
 
-10d. Type the following commands
+  10d. Type the following commands
 sudo gemini-v3-tools -h
 
 > this enters burning mode
@@ -111,7 +111,7 @@ sudo gemini-v3-tools -r
 
 ls /dev/serial/by-id/*
 
-10e. Grab the blue text like below
+  10e. Grab the blue text like below
 
 /dev/serial/by-id/usb-Klipper_stm32f405xx........
 
@@ -151,35 +151,40 @@ If your display is attached to the printer, turn it onto its side so you can see
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/V0_D-back.png?raw=true)
 
 2. Run lsusb from the command prompt
+
 Make sure you see an STM32 in DFU mode listed
-Run dfu-util --list from the command prompt and it should say one DFU is available, make a note of the text inside the [xxxx:yyyy]
 
-Run cd ~/klipper from the command line to enter the Klipper directory
+3. Run dfu-util --list from the command prompt and it should say one DFU is available, make a note of the text inside the [xxxx:yyyy]
 
-Run make menuconfig settings should be:
+4. Run cd ~/klipper from the command line to enter the Klipper directory
+
+5. Run make menuconfig settings should be:
+
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/Menuconfig_Base_Options.png?raw=true)
-Pay attention to the PA9/PA10 comm setting, as if you get it wrong it won’t work and show up in blue
+> Pay attention to the PA9/PA10 comm setting, as if you get it wrong it won’t work and show up in blue
 
 Set the "Optional features" to:
+
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/Menuconfig_Optional_Options.png?raw=true)
 
-
 Hit Q to Exit and Save
-Run make clean to clean up the make environment.
 
-Run make flash FLASH_DEVICE=xxxx:yyyy (using xxxx:yyyy from above)
+6. Run make clean to clean up the make environment.
 
-You may see what appears to be an "error" after flashing your board. (Blue box)
+7. Run make flash FLASH_DEVICE=xxxx:yyyy (using xxxx:yyyy from above)
+
+> You may see what appears to be an "error" after flashing your board. (Blue box)
 As long as you see the File downloded successfully text (Green box) you are good to proceed.
-The error (Red box) seems to be caused by the controller immediately running the uploaded code and no longer appearing as a DFU device. This is not an issue, as long as the board reports a Klipper serial name. If you see an issue with space on the chip, it may be that you still have an item ticked on the optional features step.
+
+> The error (Red box) seems to be caused by the controller immediately running the uploaded code and no longer appearing as a DFU device. This is not an issue, as long as the board reports a Klipper serial name. If you see an issue with space on the chip, it may be that you still have an item ticked on the optional features step.
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/dfu-util_Flashing_Error.png?raw=true)
 
-Remove the boot jumper and press the reset button on the back of the display.
+8. Remove the boot jumper and press the reset button on the back of the display.
 
 After completion ls /dev/serial/by-id/* should return a device begining with /dev/serial/by-id/usb-Klipper_stm32f042x6...
 
-Copy this serial port name (/dev/serial/by-id/usb-Klipper_stm32f042x6... )and place it in your [mcu display] section of the display config file.
+9. Copy this serial port name (/dev/serial/by-id/usb-Klipper_stm32f042x6... ) and place it in your [mcu display] section of the display config file.
 
 Your board should now be usable with Klipper. Use the example config file to get started Best option is to copy the config file into the same directory as printer.cfg then add [include V0Display.cfg] to the end of your printer.cfg to include the file.
 
