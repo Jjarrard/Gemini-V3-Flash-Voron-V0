@@ -92,7 +92,7 @@ Once in the console, username ‘fly’ password ‘mellow’
 
 Press q then y to save and quit
 
-9c. Type ```make -j4``````
+9c. Type `make -j4`
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/make-j4.png?raw=true)
 
@@ -101,7 +101,7 @@ Press q then y to save and quit
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/jumper.png?raw=true)
 
 10b. Type the following into Putty
-```wget -O gemini-tools_install.sh https://cdn.mellow.klipper.cn/Utils/gemini-tools/gemini-tools_install.sh && sudo bash gemini-tools_install.sh gemini-v3-tools``````
+```wget -O gemini-tools_install.sh https://cdn.mellow.klipper.cn/Utils/gemini-tools/gemini-tools_install.sh && sudo bash gemini-tools_install.sh gemini-v3-tools```
 
 Type password when required
 
@@ -128,7 +128,7 @@ Else type
 
 10e. Grab the blue text like below
 
-`/dev/serial/by-id/usb-Klipper_stm32f405xx........``
+```/dev/serial/by-id/usb-Klipper_stm32f405xx........```
 
 and put it in your printer.cfg
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/updt-printconf-w-mcu.png?raw=true)
@@ -171,9 +171,9 @@ Make sure you see an STM32 in DFU mode listed
 
 3\. Run dfu-util --list from the command prompt and it should say one DFU is available, make a note of the text inside the [xxxx:yyyy]
 
-4\. Run cd ~/klipper from the command line to enter the Klipper directory
+4\. Run `cd ~/klipper`` from the command line to enter the Klipper directory
 
-5\. Run make menuconfig 
+5\. Run `make menuconfig`` 
 
 settings should be:
 
