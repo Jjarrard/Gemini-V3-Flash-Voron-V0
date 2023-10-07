@@ -139,8 +139,8 @@ To fix the below, change the path to the virtual directory in mainsail, I did th
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/mainsail-vsd-location-error.png?raw=true)
 
-```Cd mainsail-config
-nano mainsail.cfg```
+```Cd mainsail-config```
+```nano mainsail.cfg```
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nano-mainsail.png?raw=true)
 
