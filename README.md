@@ -35,6 +35,20 @@ This came from [Mellow](https://mellow.klipper.cn/#/introduction/downloadimg)
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/putty-com.png?raw=true)
 > Give it a few seconds, You’re in
 
+6b\. If you're using a macOS (or unix based system) you don't need any additional program. You can use built-in command `screen`
+
+Type below command to find the correct device.
+
+```ls /dev/tty* | grep usbserial```
+
+You should get something like 
+
+```crw-rw-rw-  1 root             wheel   0x9000006 Oct  7 22:47 /dev/tty.usbserial-xxxxx```
+
+Then you just need to connect to the device using 
+
+```screen /dev/tty.usbserial-xxxxx 115200```
+
 
 # Add wifi
 
@@ -78,7 +92,7 @@ Once in the console, username ‘fly’ password ‘mellow’
 
 Press q then y to save and quit
 
-9c. Type make -j4
+9c. Type `make -j4`
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/make-j4.png?raw=true)
 
@@ -87,34 +101,34 @@ Press q then y to save and quit
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/jumper.png?raw=true)
 
 10b. Type the following into Putty
-wget -O gemini-tools_install.sh https://cdn.mellow.klipper.cn/Utils/gemini-tools/gemini-tools_install.sh && sudo bash gemini-tools_install.sh gemini-v3-tools
+```wget -O gemini-tools_install.sh https://cdn.mellow.klipper.cn/Utils/gemini-tools/gemini-tools_install.sh && sudo bash gemini-tools_install.sh gemini-v3-tools```
 
 Type password when required
 
 10c. If you get hid-flash error type
-cd ~/klipper/lib/hidflash && make
+```cd ~/klipper/lib/hidflash && make```
 
 Else type
-sudo gemini-v3-tools -f ~/klipper/out/klipper.bin
+```sudo gemini-v3-tools -f ~/klipper/out/klipper.bin```
 
 10d. Type the following commands
-sudo gemini-v3-tools -h
+```sudo gemini-v3-tools -h```
 
 > this enters burning mode
 
-sudo gemini-v3-tools -s
+```sudo gemini-v3-tools -s```
 
 > this starts MCU normally
 
-sudo gemini-v3-tools -r
+```sudo gemini-v3-tools -r```
 
 > This resets the MCU 
 
-ls /dev/serial/by-id/*
+```ls /dev/serial/by-id/*```
 
 10e. Grab the blue text like below
 
-/dev/serial/by-id/usb-Klipper_stm32f405xx........
+```/dev/serial/by-id/usb-Klipper_stm32f405xx........```
 
 and put it in your printer.cfg
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/updt-printconf-w-mcu.png?raw=true)
@@ -125,8 +139,8 @@ To fix the below, change the path to the virtual directory in mainsail, I did th
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/mainsail-vsd-location-error.png?raw=true)
 
-Cd mainsail-config
-nano mainsail.cfg
+```Cd mainsail-config
+nano mainsail.cfg```
 
 ![alt text](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/images/nano-mainsail.png?raw=true)
 
@@ -157,9 +171,9 @@ Make sure you see an STM32 in DFU mode listed
 
 3\. Run dfu-util --list from the command prompt and it should say one DFU is available, make a note of the text inside the [xxxx:yyyy]
 
-4\. Run cd ~/klipper from the command line to enter the Klipper directory
+4\. Run `cd ~/klipper`` from the command line to enter the Klipper directory
 
-5\. Run make menuconfig 
+5\. Run `make menuconfig`` 
 
 settings should be:
 
