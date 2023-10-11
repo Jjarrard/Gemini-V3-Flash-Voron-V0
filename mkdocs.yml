@@ -1,8 +1,24 @@
-site_name: Voron 0.2 Fly Gemini V3
+site_name: Voron 0.2 Fly Gemini V3 Setup Guide
+
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Extras: extras.md
+
 
 theme:
   name: material
+  features:
+    - navigation.top
+    - navigation.path
+    - toc.integrate
   palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -19,7 +35,11 @@ theme:
 plugins:
   - search
 
-nav:
-  - Home: index.md
-  - Installation: installation.md
-  - Extras: extras.md
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  version:
+    provider: mike

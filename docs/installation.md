@@ -99,6 +99,7 @@ Press q then y to save and quit
 ![alt text](images/installation/jumper.png?raw=true)
 
 10b. Type the following into Putty
+
 ```wget -O gemini-tools_install.sh https://cdn.mellow.klipper.cn/Utils/gemini-tools/gemini-tools_install.sh && sudo bash gemini-tools_install.sh gemini-v3-tools```
 
 Type password when required
@@ -204,5 +205,3 @@ After completion ls /dev/serial/by-id/* should return a device begining with /de
 9\. Copy this serial port name (/dev/serial/by-id/usb-Klipper_stm32f042x6... ) and place it in your [mcu display] section of the display config file.
 
 Your board should now be usable with Klipper. Use the example config file to get started Best option is to copy the config file into the same directory as printer.cfg then add [include V0Display.cfg] to the end of your printer.cfg to include the file.
-
-
