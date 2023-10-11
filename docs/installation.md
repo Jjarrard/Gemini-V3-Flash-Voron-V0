@@ -1,4 +1,4 @@
-# Getting printer to working
+### Getting printer to working
 
 GOAL:
 The goal of this document is to refresh the Gemini V3 in a Voron V0.2 to ‘as shipped’ standard as per 01/09/23, with as few external links as possible. 
@@ -48,7 +48,7 @@ Then you just need to connect to the device using
 ```screen /dev/tty.usbserial-xxxxx 115200```
 
 
-# Add wifi
+### Add wifi
 
 7\. Type nmtui into putty and press enter
 Use the arrow keys to navigate and enter for OK
@@ -132,14 +132,15 @@ and put it in your printer.cfg
 ![alt text](images/installation/updt-printconf-w-mcu.png?raw=true)
 
 
-# mainsail fix
+### Mainsail fix
 To fix the below, change the path to the virtual directory in mainsail, I did this by navigating to the config locations and editing them using Nano. There are easier ways of doing this, but this is how I did it.
 
 ![alt text](images/installation/mainsail-vsd-location-error.png?raw=true)
 
-```Cd mainsail-config```
-
-```nano mainsail.cfg```
+```
+cd mainsail-config
+nano mainsail.cfg
+```
 
 ![alt text](images/installation/nano-mainsail.png?raw=true)
 
@@ -155,7 +156,7 @@ Do the same with printer.cfg but via Fluidd (because easier)
 ![alt text](images/installation/vsd-prntcgf.png?raw=true)
 
 
-# V0 display
+### V0 display
 Somewhat stolen from https://github.com/VoronDesign/Voron-Hardware/blob/master/V0_Display/Documentation/Setup_and_Flashing_Guide.md to have a version of documentation that won't change
 
 If your display is attached to the printer, turn it onto its side so you can see the underside of the display
@@ -204,16 +205,4 @@ After completion ls /dev/serial/by-id/* should return a device begining with /de
 
 Your board should now be usable with Klipper. Use the example config file to get started Best option is to copy the config file into the same directory as printer.cfg then add [include V0Display.cfg] to the end of your printer.cfg to include the file.
 
-
-# Camera
-Look in crowsnest logs for something like video0 / video1
-Change your crowsnest.conf to match the camera that has been detected as a camera
-
-
-I've uploaded the macros that came on the board I recieved, use the printer cfg included in this repository as an example of where to put the config
-
-> **REMEMBER TO RUN ENDSTOP CALIBRATION AND PID TUNING FOR YOUR MACHINE**
-
-API key location in Fluidd for Cura/Octoprint connection
-![alt text](images/installation/api-key.png?raw=true)
 

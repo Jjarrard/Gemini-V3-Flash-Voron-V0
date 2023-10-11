@@ -1,4 +1,4 @@
-# ADXL via SPI
+### ADXL via SPI
 
 In some cases the ADXL via SPI won't work out of the box. We'll fix that :)
 
@@ -63,3 +63,15 @@ The final file should look like this
 ![alt text](images/extras/ls-correct.png)
 
 7. Redo the point 4. If everything went ok, you should be able to successfully check accelerometer status (look point 2)
+
+### Camera
+Look in crowsnest logs for something like video0 / video1
+Change your crowsnest.conf to match the camera that has been detected as a camera
+
+I've uploaded the macros that came on the board I recieved, use the printer cfg included in this repository as an example of where to put the config
+
+> **REMEMBER TO RUN ENDSTOP CALIBRATION AND PID TUNING FOR YOUR MACHINE**
+
+API key location in Fluidd for Cura/Octoprint connection
+![alt text](images/installation/api-key.png?raw=true)
+
