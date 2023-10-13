@@ -200,4 +200,4 @@ After completion ls /dev/serial/by-id/* should return a device begining with /de
 
 9\. Copy this serial port name (/dev/serial/by-id/usb-Klipper_stm32f042x6... ) and place it in your [mcu display] section of the display config file.
 
-Your board should now be usable with Klipper. Use the [example config file](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/blob/main/printer.cfg) to get started Best option is to copy the config file into the same directory as printer.cfg then add [include V0Display.cfg] to the end of your printer.cfg to include the file.
+Your board should now be usable with Klipper. Use the [example config files](https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/tree/main/Config%20Files)) to get started Best option is to copy the config file into the same directory as printer.cfg then add [include V0Display.cfg] to the end of your printer.cfg to include the file.
