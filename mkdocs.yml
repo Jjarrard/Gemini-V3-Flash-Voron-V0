@@ -4,6 +4,7 @@ site_name: Voron 0.2 Fly Gemini V3 Setup Guide
 nav:
   - Home: index.md
   - Installation: installation.md
+  - Updating: updating.md
   - Extras: extras.md
 
 
