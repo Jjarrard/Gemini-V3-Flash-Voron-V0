@@ -56,7 +56,7 @@ overlays=spi-spidev
 The final file should look like this
 
 ![armbianEnv-correct.png](images/extras/armbianEnv-correct.png)
-> Why I didn't put the file for you to copy? :) Because it can very from board to board, so it's better to just paste the lines in correct place. Don't be lazy!
+> Why I didn't put the file for you to copy? Because it can vary from board to board, so it's better to just add the lines in correct place.
 
 6\. Redo the point 3 - you should get additional spi devices on the list
 
