@@ -1,8 +1,4 @@
-### Getting printer to working
-
-GOAL:
-The goal of this document is to refresh the Gemini V3 in a Voron V0.2 to ‘as shipped’ standard as per 01/09/23, with as few external links as possible. 
-It's not perfect, but should get you up and printing again.
+### Re-Flashing The Printer
 
 ![alt text](images/installation/gemini-v3.png?raw=true)
 
