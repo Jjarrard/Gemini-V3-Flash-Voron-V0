@@ -7,5 +7,5 @@ This repo consists of 3 sections:
 - [Updating](updating.md) - Updating your printer and extensions safely.
 - [Extras](extras.md) - Additional tutorials e.g. setting up the ADXL via SPI, camera etc.
 
-Files can be found at
+Files such as Gemini firmware and config files can be found at
 https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0
