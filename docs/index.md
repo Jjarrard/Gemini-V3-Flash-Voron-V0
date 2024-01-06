@@ -6,3 +6,6 @@ This repo consists of 3 sections:
 - [Installation](installation.md) - This section will walk you thought how to refresh/reinstall the Fly Gemini V3 board on your Voron 0
 - [Updating](updating.md) - Updating your printer and extensions safely.
 - [Extras](extras.md) - Additional tutorials e.g. setting up the ADXL via SPI, camera etc.
+
+Files can be found at
+https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0
